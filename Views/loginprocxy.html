@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    (function () {
+        if (window.opener) {
+            window.opener.sso_hideMask();
+            window.close();
+        } else {
+            var win = window, par = win.parent || win.top,
+                 result = par.getReturn(win.location.search);
+            if (result.success == 'T') {
+                par.sso_hideMask(result.ticketStr);
+            } else {
+                par.loginFail(result);
+            }
+        }
+    })();
+</script>

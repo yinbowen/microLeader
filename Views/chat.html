@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>聊天主页面</title>
+    <link rel="stylesheet" href="../Styles/chat.css">
+    <link rel="stylesheet" href="../Styles/Plugins/swiper.min.css">
+    <link rel="stylesheet" href="../Styles/Plugins/XY_Dialog.css">
+</head>
+<body>
+	<div id="chat_wrap">
+		<div id="left_groups_container">
+			<div id="user_info">
+				<div class="user_img"><img src="../Images/leaderImg.png" alt=""></div>
+				<p class="user_nickname"></p>
+			</div>
+			<div id="group_list">
+				<div class="search_header">
+					<div class="search_input">
+						<input class="group_search" type="search" name="user_search" placeholder="搜索" />
+					</div>
+				</div>
+				<div class="list swiper-container">
+					<ul class="dialog_list swiper-wrapper">
+						
+					</ul>
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<div class="search_result_panel">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+		<div id="right_chat_container">
+			<div id="chat_panel">
+				<div class="panel_head">
+					<p class="head_btn history_btn">历史记录</p>
+					<p class="member_name" is_member_rended="false">普吉岛10月23日出行群</p>
+					<p class="head_btn right_close_btn">关闭</p>
+				</div>
+
+				<!--成员列表弹出框-->
+				<div id="group_member_list" class="swiper-container">
+					<div class="swiper-wrapper">
+						<ul class="swiper-slide swiper-slide-active">
+						</ul>
+					</div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+
+				<div class="panel_body">
+					<!--聊天内容详细-->
+				</div>
+
+				<div class="panel_foot">
+					<textarea name="chat_textarea" id="chat_textarea"></textarea>
+					<input id="img_upload" type="file" name="img_upload" accept="image/*" />
+					<label id="img_upload_label" for="img_upload">选择图片</label>
+					<p id="msg_send_btn">发送</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="../Scripts/Plugins/sea.js"></script>
+	<script>
+		seajs.config({
+            paths: {
+                plugins: "http://10.33.26.24/Scripts/Plugins", //注：此处相对的是当前HTML的位置
+                mods: "http://10.33.26.24/Scripts"
+            }
+            //preload: ["plugins/jquery-2.1.4.min.js", "plugins/swiper.min.js"]
+        });
+    	seajs.use("mods/main.js");
+	</script>
+</body>
+</html>

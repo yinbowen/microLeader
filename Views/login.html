@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录系统</title>
+	<link rel="stylesheet" href="../Styles/chat.css">
+</head>
+<body>
+	<div id="log_content">
+		<button id="vteam_login_btn">登录微领队</button>
+	</div>
+	<script src="../Scripts/Plugins/jquery-2.1.4.js"></script>
+	<script>
+		console.log(document.cookie);
+		$("#log_content").on('click', 'button', function(event) {
+			event.preventDefault();
+			/* Act on the event */
+			__SSO_booking("vteam_login_btn", 0);
+		});
+		function __SSO_submit() {
+			window.location.href = "http://vteam.ctrip.com/Views/chat.html";
+		}
+	</script>
+	<input type="hidden" id="sso_loginprocxyPath" name="sso_loginprocxyPath" value="http://vteam.ctrip.com/Views/loginprocxy.html" />
+	 <script type="text/javascript" src="//webresource.c-ctrip.com/ResCRMOnline/R6/member/common/js/mask_v1.min.js?20150915" charset="utf-8" ></script>
+</body>
+</html>
